@@ -1,0 +1,73 @@
+tags:
+  - Contacts
+summary: Create contact
+operationId: createContact
+description: 'Create a contact with payload'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - name
+          - phoneNumber
+          - contactType
+          - userId 
+        properties:
+          _id:
+            description: "Contact's id"
+            type: string
+            example: 65e4decdd286b30065d54af9
+          name:
+            description: "Contact's name"
+            type: string
+            example: 'John Doe'
+          phoneNumber:
+            description: "Contact's phone number"
+            type: number
+            example: "+1234567890"
+          email:
+            description: "Contact's email address"
+            type: string
+            example: "john.doe@example.com"
+          isFavourite:
+            description: "Flag if contact is marked as favorite"
+            type: boolean
+            example: false
+          contactType:
+            description: "Type of contact"
+            type: string
+            enum: ['work', 'home', 'personal']
+          userId:
+            description: "ID of the user who owns the contact"
+            type: string
+            example: 65e4decdd286b30065d54af9
+          photo:
+            description: "Link to contact's photo"
+            type: string
+            format: binary
+responses:
+  '200':
+    description: 'Contact created successfully'
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Successfully created contact!
+            data:
+              type: object
+              $ref: ../../components/schemas/contact.yaml
+  '404':
+    $ref: '../../components/responses/404.yaml'
