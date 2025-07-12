@@ -1,20 +1,21 @@
 openapi: 3.1.0
 info:
   version: 1.0.0
-  title: <назва вашого додатку>
+  title: Contacts API
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   description:
-    <опис вашого додатку>
+    A simple Contacts API that allows users to manage their personal and professional contacts. 
+    Users can create, update, delete, and search contacts, mark them as favorites, and upload a photo.
+    Authorization is required for all operations.
 tags:
    - name: Contacts
      description: Operations about contacts.
    - name: Auth
      description: Auth operations.
 servers:
-  - url: http://localhost:3000
-  - url: #посилання на задеплоєний сайт
+  - url: https://contacts-app-accv.onrender.com
 paths:
   /contacts:
     get:
