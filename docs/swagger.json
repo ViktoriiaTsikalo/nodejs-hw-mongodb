@@ -7,16 +7,11 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "description": "A simple Contacts API that allows users to manage their personal and professional contacts. 
-    Users can create, update, delete, and search contacts, mark them as favorites, and upload a photo.
-    Authorization is required for all operations."
+    "description": "A simple Contacts API that allows users to manage their personal and professional contacts. Users can create, update, delete, and search contacts, mark them as favorites, and upload a photo. Authorization is required for all operations."
   },
   "servers": [
     {
       "url": "https://contacts-app-accv.onrender.com"
-    },
-    {
-      "url": null
     }
   ],
   "tags": [
@@ -260,7 +255,7 @@
                   "properties": {
                     "status": {
                       "type": "integer",
-                      "example": 201
+                      "example": 200
                     },
                     "message": {
                       "type": "string",
